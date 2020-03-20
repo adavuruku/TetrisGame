@@ -1,0 +1,161 @@
+
+    * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  font-size: 2em;
+  font-family: sans-serif;
+  color: #fff;
+  background-color: whitesmoke;
+}
+
+.intro {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  bottom: 10vh;
+  width: 50%;
+  height: 50%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  color:#000;
+  overflow: scroll;
+  font-size: 22px;
+  justify-content: center;
+  align-items: center;
+  background-color:#dff9fb;
+}
+
+.intro button {
+  padding: 2%;
+  margin-top: 5%;
+  color:white;
+  border-radius: 10px;
+  background-color:RED;
+  border: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#score {
+  margin: 0 10px;
+}
+
+canvas {
+  border: .2em solid #30336b;
+  height: 80vh;
+}
+
+.cover, .game-over {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.countdown-timer {
+  width: 1em;
+  font-size: 3em;
+  position: absolute;
+  animation: count 3s steps(3);
+  animation-fill-mode: forwards;
+}
+
+@keyframes count {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -3.5em;
+  }
+}
+
+.controlscontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 25%;
+  background-color: rgb(114, 114, 116);
+}
+
+
+#start, #pause, .restart, #help, #close {
+  display: block;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+#start:hover,
+#start:disabled,
+#pause:hover,
+#pause:disabled,
+.restart:hover,
+#help:hover,
+#close:hover {
+  background-color: #ddd;
+}
+
+#start:disabled,
+#pause:disabled {
+  cursor: not-allowed;
+}
+
+.restart {
+  margin: 0 auto;
+}
+
+.help {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: 20%;
+  left: 25%;
+  bottom: 10vh;
+  width: 50%;
+  height: 50%;
+  background-color:#dff9fb;
+  display: none;
+  color:#000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

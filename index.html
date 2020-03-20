@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tetris</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="intro">
+    <p style="color:red; font-size: 22px;margin-bottom: 20px;">About Tetris Game. </p>
+    <hr/>
+    <p>Tetris © 1985~2020 Tetris Holding. Tetris logos, Tetris theme song and Tetriminos are
+       trademarks of Tetris Holding. The Tetris trade dress is owned by Tetris Holding. Licensed to The Tetris Company. 
+       Tetris Game Design by Alexey Pajitnov. Tetris Logo Design by Roger Dean. </p>
+       <p style="color:red; font-size: 18px;margin-top: 20px;">All Rights Reserved.</p>
+       <hr/>
+       <button onclick="closeIntro()">Close</button>
+  </div>
+  <!-- <div class="score"><h3>Score :<span id="score">0</span></h3></div> -->
+  <canvas id="tetris" width="240" height="400">
+
+  </canvas>
+  <div class="controlscontainer">
+    <div class="controls">
+      <button onclick="startNewGame()" style="background-color:#22a6b3;width: 25%;" id="start">START</button>
+      <button onclick="pauseGame()" style="background-color:#ff7979;width: 25%;" id="pause" disabled>PAUSE</button>
+      <button onclick="showHelp()" style="width: 25%;" id="help">HELP</button>
+      <h3>Score :<span id="score">0</span></h3>
+    </div>
+  </div>
+  
+
+  <div class="cover">
+    <div class="countdown">
+      <div class="countdown-timer">0 1 2 3</div>
+    </div>
+  </div>
+
+  <div class="game-over">
+    <div>
+      <h1>Game over.</h1>
+      <h3 id="finalScore"></h3>
+      <button onclick="startNewGame()" class="restart">RESTART</button>
+    </div>
+  </div>
+
+  <div class="help">
+    <h3>How To Play</h3>
+    <p>
+   <ul>
+     <li>To move left click left arrow key or 4</li>
+     <li>To move right click the right arrow key or 6</li>
+     <li>To hard drop click space or 8</li>
+     <li>To soft drop click the down arrow key or 2</li>
+     <li>To pause click Esc or F1 keys</li>
+     <li> To hold click Shift , C or 0</li>
+     <li>To rotate clockwise X and the up arrow key</li>
+     <li>To rotate counterclockwise cllick CTRL and Z</li>
+   </ul>
+    </p>
+    <button id="close" onclick="hideHelp()">Close</button>
+  </div>
+
+  <audio src="https://res.cloudinary.com/ibnabubakre/video/upload/v1584605425/Red_Army_Choir_Korobeiniki..mp3" id="audio">
+    <p>Your browser doesn't support the audio element</p>
+  </audio>
+  <audio src="http://www.bndclan.com/Bend3r/Bend3r/hl-content/cstrike/sound/tetris/line.wav" id="clearline">
+    <p>Your browser doesn't support the audio element</p>
+  </audio>
+  <audio src="http://www.bndclan.com/Bend3r/Bend3r/hl-content/cstrike/sound/tetris/fall.wav" id="collide">
+    <p>Your browser doesn't support the audio element</p>
+  </audio>
+  <audio src="http://www.bndclan.com/Bend3r/Bend3r/hl-content/cstrike/sound/tetris/gameover.wav" id="gameover">
+    <p>Your browser doesn't support the audio element</p>
+  </audio>
+  <script type="text/javascript" src="createTetrimonos.js"></script>
+  <script type="text/javascript" src="gameEvents.js"></script>
+  <script type="text/javascript" src="gameLogic.js"></script>
+</body>
+</html>
